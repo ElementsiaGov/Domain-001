@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="https://i.ibb.co/6nqLvXs/EDITBUDDY-3-removebg-preview.png" type="image/png"> <!-- Favicon -->
+    </head>
+<style>
+/* Loader and White Background Styles */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff; /* White background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader-overlay.hidden {
+    display: none; /* Hide loader and background when done */
+}
+
+/* Lottie Loader Responsive */
+#lottie-loader {
+    width: 90%; /* 70% of the viewport width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 700px; /* Cap at 700px for larger screens */
+}
+
+@media (max-width: 768px) {
+    #lottie-loader {
+        width: 90%; /* 90% for smaller screens */
+        max-width: 500px; /* Cap at 500px */
+    }
+}
+
+</style>    
+<body>
+    <!-- Lottie Loader -->
+<div id="loader" class="loader-overlay">
+    <div id="lottie-loader"></div>
+</div>
+    <!-- Top Left Logo and Branding -->
+    <div class="branding">
+        <img src="https://i.ibb.co/cwhcXGD/EDITBUDDY-1-removebg-preview.png" alt="EditBuddy Logo" class="logo">
+        <div class="branding-text">
+            <h1>EDITBUDDY</h1>
+            <p>WEB DESIGN AND DEVELOPMENT</p>
+        </div>
+    </div>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <!-- Left Section (Full Image) -->
+        <div class="left-section">
+            <img src="https://i.ibb.co/qCW4R26/R-3.jpg" alt="Illustration" class="background-image">
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <h1>Interested in This Domain?</h1>
+            <p>Contact <strong>EditBuddy</strong> to help us develop and bring your ideas to life!</p>
+            <p><strong>Email:</strong> <a href="mailto:domains@editbuddy.co.za" style="color: #fbb034; text-decoration: none;">domains@editbuddy.co.za</a></p>
+            <p>We specialize in web design and development, tailored to your needs.</p>
+            <button class="login-btn">
+                <a href="mailto:domains@editbuddy.co.za" style="text-decoration: none; color: inherit;">Contact Us</a>
+            </button>
+            <p>Learn more about us: <a href="https://editbuddy.co.za" target="_blank" style="color: #fbb034; text-decoration: none;">Visit EditBuddy Website</a></p>
+        </div>
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+    <script>
+        // Load Lottie animation
+        const loaderAnimation = lottie.loadAnimation({
+            container: document.getElementById('lottie-loader'), // ID of the container
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'https://lottie.host/1d396990-7c00-445b-9594-18976b311d28/3DRkGR4ibh.json' // Lottie animation link
+        });
+    
+        // Ensure the loader and white background stay visible for at least 2 seconds
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden'); // Hide loader
+            }, 2000); // Minimum 2-second display
+        });
+    </script>
+    
+    <script src="script.js"></script>
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
